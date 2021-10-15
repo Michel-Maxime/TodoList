@@ -1,1 +1,1 @@
-[{"id":1,"msg":"Je dois ranger ma chambre","checked":false},{"id":2,"msg":"faire ma vaiselle","checked":true},{"id":3,"msg":"faire a manger ","checked":false}]
+[{"id":0,"msg":"Faire les courses","checked":false},{"id":1,"msg":"Sortir le chien","checked":false},{"id":2,"msg":"rendre mon projet Docker","checked":true},{"id":4,"msg":"Ranger ma chambre","checked":false}]

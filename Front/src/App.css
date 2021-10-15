@@ -9,13 +9,23 @@ ul {
   padding: 0;
 }
 
+ul li div{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin-top: -12px;
+  padding-top: 12px;
+  margin-left: -40px;
+  padding-left: 40px;
+  font-size: 18px;
+}
+
 /* Style the list items */
-ul li {
+ul li{
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
   background: #eee;
-  font-size: 18px;
   transition: 0.2s;
 
   /* make the list items unselectable */
@@ -39,6 +49,9 @@ ul li:hover {
 ul li.checked {
   background: #888;
   color: #fff;
+}
+
+ul li div.checked {
   text-decoration: line-through;
 }
 
