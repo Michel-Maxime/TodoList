@@ -12,7 +12,7 @@ services:
       - "./Back/Todolist.json:${APP}/Todolist.json"
   front-server:
     image: front
-    build: front
+    build: Front
     ports: 
       - "3000:3000"
     depends_on:
