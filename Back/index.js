@@ -27,5 +27,16 @@ app.delete('/delete/:id', (req, res) => {
   res.json(toolkit.GET())
 })
 
+app.put('/checked/:id', (req, res) => {
+  let todo = toolkit.GET()
+  todo.map((td) => {
+    if(td.id == req.params.id){
+      td.checked = !td.checked
+    }
+  })
+  toolkit.POST(todo)
+  res.json(toolkit.GET())
+})
+
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
