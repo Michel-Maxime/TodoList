@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  api-server:
+    image: api
+    build: Back
+    env_file: 
+      - .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - "./Back/Todolist.json:${APP}/Todolist.json"
+  front-server:
+    image: front
+    build: front
+    ports: 
+      - "3000:3000"
+    depends_on:
+      - api-server
