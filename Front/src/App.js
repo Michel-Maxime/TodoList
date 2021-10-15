@@ -2,10 +2,8 @@
 import './App.css';
 // eslint-disable-next-line
 import {useState, useEffect} from 'react'
-//import { application } from 'express';
 
 function App() {
-// eslint-disable-next-line
   const[newTodo, setToDo] = useState("")
   const[data, setData] = useState([])
 
@@ -15,7 +13,6 @@ function App() {
     .then(data => setData(data))
   }, [])
 
-  // eslint-disable-next-line
   let AddMessage = async () => {
         
     const rawResponse = await fetch('/post', {
@@ -32,7 +29,6 @@ function App() {
     setData(content)
   }
 
-// eslint-disable-next-line
   let Close = async (id) => {
     fetch('/delete/' + id, {
       method: 'DELETE'
@@ -40,7 +36,6 @@ function App() {
     .then(res => res.json())
     .then(data => setData(data))
   }
-
 
   return (
     <div className="App">
