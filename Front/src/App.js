@@ -39,18 +39,18 @@ function App() {
 
   return (
     <div className="App">
-      <div id="myDIV" class="header">
+      <div id="myDIV" className="header">
         <h2>My To Do List</h2>
         <input type="text" id="myInput" placeholder="Title..." onChange={event => setToDo(event.target.value)} />
-        <span onClick={AddMessage} class="addBtn">Add</span>
+        <span onClick={AddMessage} className="addBtn">Add</span>
       </div>
 
       <ul id="MyUl">
-      {data.map(function (todo) {
+      {data.map(function (todo, key) {
         return(
-          <li onClick={event => event.target.classList.toggle('checked')}>
+          <li key={todo.id} onClick={event => event.target.classList.toggle('checked')}>
             {todo.msg}
-            <sapn id={todo.id} class="close" onClick={event => Close(event.target.id)}>{'\u00D7'}</sapn>
+            <span id={todo.id} className="close" onClick={event => Close(event.target.id)}>{'\u00D7'}</span>
           </li>
         )
       })}
