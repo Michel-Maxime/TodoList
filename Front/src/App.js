@@ -13,15 +13,14 @@ function App() {
     .then(data => setData(data))
   }, [])
 
-  let AddMessage = async () => {
-        
+  let AddMessage = async () => {     
     const rawResponse = await fetch('/post', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({id: data.length+1, msg: newTodo})
+      body: JSON.stringify({id: data.length+1, msg: newTodo, checked: false})
     });
 
     const content = await rawResponse.json();
@@ -37,6 +36,16 @@ function App() {
     .then(data => setData(data))
   }
 
+  let Checked = async (id) => {     
+    const rawResponse = await fetch('/checked/' + id, {
+      method: 'PUT',
+    });
+
+    const content = await rawResponse.json();
+
+    setData(content)
+  }
+
   return (
     <div className="App">
       <div id="myDIV" className="header">
@@ -48,7 +57,7 @@ function App() {
       <ul id="MyUl">
       {data.map(function (todo, key) {
         return(
-          <li key={todo.id} onClick={event => event.target.classList.toggle('checked')}>
+          <li key={todo.id} className={todo.checked ? "checked" : ""} onClick={event => Checked(todo.id)}>
             {todo.msg}
             <span id={todo.id} className="close" onClick={event => Close(event.target.id)}>{'\u00D7'}</span>
           </li>
