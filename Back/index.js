@@ -20,13 +20,9 @@ app.post('/post', (req, res) => {
 app.delete('/delete/:id', (req, res) => {
   let todo = toolkit.GET()
   todo = todo.filter(td => td.id != req.params.id)
-  
   todo.map((td, key) => {
     td.id = key
   })
-
-  console.log(todo);
-
   toolkit.POST(todo)
   res.json(toolkit.GET())
 })
