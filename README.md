@@ -2,7 +2,7 @@
 
 L'objectif de ce projet était de mettre en pratique les connaissances acquises durant une formation Docker.
 
-![](/home/maxime/.config/marktext/images/2021-10-15-17-09-40-image.png)
+![capture](capture.png)
 
 ### Technos :
 
